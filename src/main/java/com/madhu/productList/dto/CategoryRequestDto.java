@@ -5,12 +5,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class ProductDTO {
-    private Long id;
+@NoArgsConstructor
+public class CategoryRequestDto {
     private String name;
     private String description;
-    private Double price;
-    private Long CategoryId;
+    private String createdBy;
+
 }

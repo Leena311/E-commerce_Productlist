@@ -4,15 +4,19 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CategoryDTO {
+public class CategoryResponseDto {
 
     private Long id;
     private String name;
-    private List<ProductDTO> products;
+    private String description;
+    private String createdBy;
+    private LocalDateTime createdDate;
+
+
 
 }

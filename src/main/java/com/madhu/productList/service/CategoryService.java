@@ -1,6 +1,7 @@
 package com.madhu.productList.service;
 
-import com.madhu.productList.dto.CategoryDTO;
+import com.madhu.productList.dto.CategoryRequestDto;
+import com.madhu.productList.dto.CategoryResponseDto;
 import com.madhu.productList.entity.Category;
 import com.madhu.productList.mapper.CategoryMapper;
 import com.madhu.productList.repository.CategoryRepository;
@@ -12,11 +13,12 @@ public class CategoryService {
     @Autowired
     private CategoryRepository categoryRepository;
 
-    // create category
-    public CategoryDTO createCategory(CategoryDTO categoryDTO){
-        Category category = CategoryMapper.toCategoryEntity(categoryDTO);
-        category = categoryRepository.save(category);
-        return CategoryMapper.toCategoryDTO(category);
-
+    public CategoryResponseDto saveCategory(CategoryRequestDto categorydto){
+        Category categoryEntity = CategoryMapper.toCategoryEntity(categorydto);
+        Category savedCategory = categoryRepository.save(categoryEntity);
+        return CategoryMapper.toCategoryDto(savedCategory);
     }
+
+
+
 }

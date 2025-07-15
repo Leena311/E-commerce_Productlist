@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.madhu</groupId>
-	<artifactId>productList</artifactId>
+	<artifactId>categorytList</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>productList</name>
+	<name>categorytList</name>
 	<description>Ecommerse project for Spring Boot</description>
 	<url/>
 	<licenses>

@@ -1,6 +1,9 @@
 package com.madhu.productList.controller;
 
-import com.madhu.productList.dto.CategoryDTO;
+
+import com.madhu.productList.dto.CategoryRequestDto;
+import com.madhu.productList.dto.CategoryResponseDto;
+import com.madhu.productList.entity.Category;
 import com.madhu.productList.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,11 +18,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class CategoryController {
     @Autowired
     private CategoryService categoryService;
-    @PostMapping
-    public ResponseEntity<?> createCategory(@RequestBody CategoryDTO categoryDTO){
-        CategoryDTO savedCategory = categoryService.createCategory(categoryDTO);
-        return ResponseEntity.status(HttpStatus.CREATED).body(savedCategory);
+@PostMapping
+    public CategoryResponseDto createCategory(@RequestBody CategoryRequestDto categoryDto){
+    return  categoryService.saveCategory(categoryDto);
+}
 
-    }
 
 }
